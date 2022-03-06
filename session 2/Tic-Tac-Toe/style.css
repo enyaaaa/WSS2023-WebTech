@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #d2e9ff;
+}
+
+.selection{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 100px 25px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+header{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.title{
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.options{
+    display: flex;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.options button{
+    width: 100%;
+    font-size: 15px;
+    padding: 8px 0;
+    border: none;
+    border-radius: 10px;
+}
+
+.options button.playerx{
+    margin-right: 5px;
+}
+
+.options button.playero{
+    margin-right: 5px;
+}
+
+.play{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.play section{
+    display: flex;
+}
+
+.play section span{
+    display: block;
+    margin: 2px;
+    height: 80px;
+    width: 80px;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.play .reset{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.results{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    text-align: center;
+    display: none;
+}
+
+.results .replay{
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.x::before{
+    content: 'X';
+    font-size: 40px;
+    
+}
+
+.o::before{
+    content: 'O';
+    font-size: 40px;
+}

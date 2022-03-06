@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.todolist{
+    margin: 20px auto;
+    max-width: 800px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #e7fbff;
+}
+
+header{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.userinput{
+    text-align: center;
+}
+
+.userinput input{
+    height: 50px;
+    width: 60%;
+    padding: 0 20px;
+}
+
+.newtodo{
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+}
+
+.add{
+    width: 90px;
+    height: 50px;
+    margin-left: 20px;
+    border-radius: 10px;
+    border: none;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.add.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.todo-list{
+    margin: 20px 85px;
+}
+
+.todo-list .todo{
+    list-style: none;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #b9b9b9;
+}
+
+.todo-list .todo:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.todo-list .todo label{
+    display: flex;
+}
+
+.todo p.checked{
+    text-decoration: line-through;
+}
+
+.todo-list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-list .todo label input{
+    margin-top: 6px;
+    margin-right: 12px;
+}
+
+.todo-list .settings button{
+    width: 60px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.clearall{
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 80px;
+    border-radius: 10px;
+    border: none;
+}
