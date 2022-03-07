@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -8,7 +7,7 @@
 
 .todolist{
     margin: 20px auto;
-    max-width: 800px;
+    max-width: 70%;
     width: 100%;
     padding: 25px;
     border-radius: 10px;
@@ -40,7 +39,6 @@ header{
 .add{
     width: 90px;
     height: 50px;
-    margin-left: 20px;
     border-radius: 10px;
     border: none;
     opacity: 0.4;
@@ -69,12 +67,9 @@ header{
     padding-bottom: 0;
 }
 
-.todo-list .todo label{
-    display: flex;
-}
-
-.todo p.checked{
+#taskstatus.checked{
     text-decoration: line-through;
+    opacity: 0.4;
 }
 
 .todo-list li{
@@ -84,8 +79,13 @@ header{
 }
 
 .todo-list .todo label input{
+    margin-top: 12px;
+    margin-right: 12px; 
+}
+
+.todo-list .todo label p{
     margin-top: 6px;
-    margin-right: 12px;
+    margin-right: 10px; 
 }
 
 .todo-list .settings button{
@@ -103,4 +103,58 @@ header{
     margin-left: 80px;
     border-radius: 10px;
     border: none;
+}
+
+.userinputdetails{
+    display: flex;
+    margin-left: 20%;
+    width: 60.6%;
+    padding: 8px 0;
+}
+
+.userinputdetails input{
+    border: none;
+    border-radius: 10px;
+}
+
+.userinputdetails .duedate{
+    margin-right: 5px;
+}
+
+.userinputdetails .subject{
+    margin-right: 5px;
+}
+
+.filter{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.filter button{
+    border: none;
+    background-color: transparent;
+    margin-right: 50px;
+}
+
+.filter .active{
+    color: #369fa7;
+}
+
+.search_box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20%;
+    height: 50px;
+    width: 60%;
+}
+
+.search_box input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 0 60px 0 20px;
 }

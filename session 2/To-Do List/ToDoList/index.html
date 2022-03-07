@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -12,15 +14,30 @@
 <body>
     <div class="todolist">
         <header>To Do List</header>
+
         <div class="userinput">
             <input class="newtodo" type="text" placeholder="New To Do!">
-            <button class="add">Add</button>
+            <div class="userinputdetails">
+                <input type="date" class="duedate">
+                <input type="text" class="subject" placeholder="Module">
+            </div>
+            <button class="add" id="add">Add</button>
+        </div>
+        <div class="filter">
+            <div class="search_box">
+                <input type="search" id="filter" placeholder="Search task name here..." onkeyup="searchtask()">
+            </div>
+            <button><span id="name" class="active">Name &#9650</span></button>
+            <button><span id="due">Due Date &#9650</span></button>
+            <button><span id="modules">Modules &#9650</span></button>
+            <button><span id="completed">Completed</span></button>
         </div>
         <button class="clearall">Clear All</button>
         <ul class="todo-list"></ul>
     </div>
-    
+
 </body>
+
 </html>
 
 <script src="script.js"></script>
