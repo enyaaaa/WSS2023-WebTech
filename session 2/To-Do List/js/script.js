@@ -4,7 +4,9 @@ const taskInputmodule = document.querySelector(".userinputdetails .subject");
 const addbtn = document.querySelector(".userinput button");
 const todolist = document.querySelector(".todo-list");
 const clearall = document.querySelector(".clearall");
-const sortName = document.querySelector("#sortname");
+const filter = document.querySelectorAll(".filter span");
+const sortdefault = document.querySelector("#sortdefault");
+const sortname = document.querySelector("#sortname");
 const sortdue = document.querySelector("#sortdue");
 const sortmodules = document.querySelector("#sortmodules");
 
@@ -15,7 +17,14 @@ let isEditedTask = false;
 
 let desc = false;
 
-sortName.addEventListener("click", () => {
+filter.forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelector("span.active").classList.remove("active");
+        btn.classList.add("active");
+    })
+})
+
+sortname.addEventListener("click", () => {
     let array = sort_by_name(todos, 'task', desc);
     showTask(array);
     desc = !desc;
@@ -34,13 +43,31 @@ function sort_by_name(array, sort, desc){
 }
 
 sortdue.addEventListener("click", () => {
-    let array = sort_by_due(todos, 'task', desc);
+    let array = sort_by_due(todos, 'due', desc);
     showTask(array);
     desc = !desc;
     console.log(array);
 })
 
 function sort_by_due(array, sort, desc){
+    array.sort(function(a,b){
+        if (a[sort]<b[sort]) return -1;
+        if (a[sort]>b[sort]) return 1;
+        return 0;
+    })
+
+    if (desc) array.reverse();
+    return array
+}
+
+sortmodules.addEventListener("click", () => {
+    let array = sort_by_module(todos, 'module', desc);
+    showTask(array);
+    desc = !desc;
+    console.log(array);
+})
+
+function sort_by_module(array, sort, desc){
     array.sort(function(a,b){
         if (a[sort]<b[sort]) return -1;
         if (a[sort]>b[sort]) return 1;
@@ -164,7 +191,7 @@ function editTask(taskid, taskName, duedate, module) {
 }
 
 function searchtask() {
-    const input = document.getElementById("filter").value.toUpperCase();
+    const input = document.getElementById("filtertask").value.toUpperCase();
     const searchtask = document.getElementById("todo-list");
     console.log(searchtask);
 
@@ -176,6 +203,26 @@ function searchtask() {
         console.log(task);
 
         if (task.innerText.toUpperCase().indexOf(input) > -1) {
+            search[i].style.display = "";
+        } else {
+            search[i].style.display = "none";
+        }
+    }
+}
+
+function searchmodule() {
+    const input = document.getElementById("filtermodule").value.toUpperCase();
+    const searchmodule = document.getElementById("todo-list");
+    console.log(searchmodule);
+
+    const search = searchmodule.getElementsByClassName("todo")
+    console.log(search);
+
+    for (let i = 0; i < search.length; i++) {
+        let module = search[i].querySelector("#taskstatus p.module");
+        console.log(module);
+
+        if (module.innerText.toUpperCase().indexOf(input) > -1) {
             search[i].style.display = "";
         } else {
             search[i].style.display = "none";

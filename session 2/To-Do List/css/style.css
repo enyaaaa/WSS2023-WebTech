@@ -150,6 +150,7 @@ header{
     margin-left: 20%;
     height: 50px;
     width: 60%;
+    display: flex;
 }
 
 .search_box input{
@@ -161,4 +162,12 @@ header{
     border-radius: 10px;
     background: #ffffff;
     padding: 0 60px 0 20px;
+}
+
+.search_box .searchtask{
+    margin-right: 5px;
+}
+
+.search_box .searchmodule{
+    margin-right: 5px;
 }

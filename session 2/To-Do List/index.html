@@ -25,19 +25,18 @@
         </div>
         <div class="filter">
             <div class="search_box">
-                <input type="search" id="filter" placeholder="Search task name here..." onkeyup="searchtask()">
+                <input class="searchtask" type="search" id="filtertask" placeholder="Search task name here..." onkeyup="searchtask()">
+                <input class="searchmodule" type="search" id="filtermodule" placeholder="Search task module here..." onkeyup="searchmodule()">
             </div>
-            <button><span id="sortname" class="active">Name</sp></button>
+            <button><span id="sortname" class="active">Name</span></button>
             <button><span id="sortdue">Due Date</span></button>
             <button><span id="sortmodules">Modules</span></button>
-            <button><span id="completed">Completed</span></button>
         </div>
         <button class="clearall">Clear All</button>
         <ul class="todo-list" id="todo-list"></ul>
     </div>
 
 </body>
-
 </html>
 
 <script src="js/script.js"></script>
