@@ -111,6 +111,7 @@ addbtn.onclick = () => {
     let duedate = taskInputdate.value;
     let subject = taskInputmodule.value;
     if (!isEditedTask) {
+        todos = !todos ? [] : todos;
         let taskInfo = { task: userTask, due: duedate, module: subject, status: "pending" }
         todos.push(taskInfo);
     } else {
@@ -133,21 +134,19 @@ function showTask() {
     if (todos) {
         todos.forEach((listArr, id) => {
             let isCompleted = listArr.status == "completed" ? "checked" : "";
-            li += `<li class="details">
-                        <li class="todo">
-                            <label for="${id}">
-                                <input class="checkbox" onclick="doneStatus(this)" type="checkbox" id="${id}" ${isCompleted}>
-                                <div class="${isCompleted}" id="taskstatus">
-                                    <p class="task">${listArr.task}</p>
-                                    <p class="module">${listArr.module}</p>
-                                    <p class="due"><h4><span class="badge badge-info">${listArr.due}</span></h4></p>
-                                </div>
-                            </label>
-                            <span class="settings">
-                                <button onclick="editTask(${id}, '${listArr.task}', '${listArr.due}', '${listArr.module}')" class="edit">Edit</button>
-                                <button onclick="deleteTask(${id})" class="delete">Delete</button>
-                            </span>
-                        </li>
+            li += `<li class="todo">
+                        <label for="${id}">
+                            <input class="checkbox" onclick="doneStatus(this)" type="checkbox" id="${id}" ${isCompleted}>
+                            <div class="${isCompleted}" id="taskstatus">
+                                <p class="task">${listArr.task}</p>
+                                <p class="module">${listArr.module}</p>
+                                <p class="due"><h4><span class="badge badge-info">${listArr.due}</span></h4></p>
+                            </div>
+                        </label>
+                        <span class="settings">
+                            <button onclick="editTask(${id}, '${listArr.task}', '${listArr.due}', '${listArr.module}')" class="edit">Edit</button>
+                            <button onclick="deleteTask(${id})" class="delete">Delete</button>
+                        </span>
                     </li>`;
         });
     }
