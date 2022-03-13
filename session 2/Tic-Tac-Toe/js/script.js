@@ -50,6 +50,7 @@ function handleResultValidation() {
     if (roundWon) {
         statusDisplay.innerHTML = winningMessage();
         gameActive = false;
+        
         return;
     }
 
@@ -59,7 +60,7 @@ function handleResultValidation() {
         gameActive = false;
         return;
     }
-
+    
     handlePlayerChange();
 }
 
